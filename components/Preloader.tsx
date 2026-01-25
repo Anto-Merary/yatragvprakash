@@ -1,82 +1,87 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import gsap from "gsap";
 
 export default function Preloader({ onComplete }: { onComplete: () => void }) {
-    const [lines, setLines] = useState<string[]>([]);
     const [progress, setProgress] = useState(0);
+    const containerRef = useRef<HTMLDivElement>(null);
+    const textRef = useRef<HTMLDivElement>(null);
+    const lineRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
-        const bootSequence = [
-            "INITIALIZING KERNEL...",
-            "LOADING SOUND DRIVERS...",
-            "CHECKING MEMORY INTEGRITY...",
-            "ALLOCATING VRAM...",
-            "MOUNTING FILE SYSTEM...",
-            "ESTABLISHING CONNECTION...",
-            "SYSTEM READY."
-        ];
-
-        let currentLine = 0;
-        const interval = setInterval(() => {
-            if (currentLine < bootSequence.length) {
-                setLines((prev) => [...prev, bootSequence[currentLine]]);
-                currentLine++;
-            } else {
-                clearInterval(interval);
+        const tl = gsap.timeline({
+            onComplete: () => {
+                // Fade out animation
+                gsap.to(containerRef.current, {
+                    yPercent: -100,
+                    duration: 1.5,
+                    ease: "power4.inOut",
+                    onComplete: onComplete
+                });
             }
-        }, 200);
+        });
 
-        const progressInterval = setInterval(() => {
-            setProgress((prev) => {
-                if (prev >= 100) {
-                    clearInterval(progressInterval);
-                    setTimeout(onComplete, 500);
-                    return 100;
-                }
-                return prev + 2;
-            });
-        }, 30);
+        // Animate progress 0 to 100
+        const progressObj = { value: 0 };
+
+        tl.to(progressObj, {
+            value: 100,
+            duration: 4,
+            ease: "expo.inOut",
+            onUpdate: () => {
+                setProgress(Math.round(progressObj.value));
+            }
+        });
+
+        // Initial revealing animations
+        gsap.from(lineRef.current, {
+            scaleX: 0,
+            duration: 1.5,
+            ease: "power3.out"
+        });
 
         return () => {
-            clearInterval(interval);
-            clearInterval(progressInterval);
+            tl.kill();
         };
     }, [onComplete]);
 
     return (
-        <div className="fixed inset-0 bg-black z-[9999] flex flex-col justify-between p-8 font-mono text-xs md:text-sm text-gray-300 selection:bg-accent selection:text-white">
-            <div>
-                <div className="mb-8 text-accent">
-                    SANA_OS v2.0.0 (c) 2026 // CINEMATIC_CORE
-                    <br />
-                    BIOS Date 01/24/26 21:00:00 Ver: 10.0.1
-                </div>
-                <div className="flex flex-col gap-1">
-                    {lines.map((line, i) => (
-                        <div key={i} className="flex">
-                            <span className="text-accent mr-2">&gt;</span>
-                            {line}
-                        </div>
-                    ))}
-                </div>
-            </div>
+        <div ref={containerRef} className="fixed inset-0 bg-black z-[9999] flex flex-col justify-center items-center overflow-hidden">
 
-            <div className="w-full">
-                <div className="flex justify-between mb-2 text-accent">
-                    <span>SYSTEM_INITIALIZATION</span>
-                    <span>{progress}%</span>
-                </div>
-                <div className="w-full h-1 bg-gray-900 border border-white/20">
-                    <div
-                        className="h-full bg-accent relative"
-                        style={{ width: `${progress}%` }}
-                    >
-                        <div className="absolute right-0 top-1/2 -translate-y-1/2 w-2 h-4 bg-white shadow-[0_0_10px_rgba(255,255,255,0.8)]"></div>
+            <div className="relative w-full max-w-[90vw] flex flex-col items-center justify-center leading-none select-none">
+                {/* YATRA */}
+                <h1 className="text-[15vw] md:text-[18vw] font-black tracking-tighter opacity-100"
+                    style={{
+                        WebkitTextStroke: "1px #d946ef", // fuchsia-500 hex
+                        color: "transparent"
+                    }}>
+                    YATRA
+                </h1>
+
+                {/* Center Line & Loading Text */}
+                <div className="absolute top-1/2 left-0 w-full -translate-y-1/2 flex items-center justify-center z-10">
+                    <div ref={lineRef} className="w-full h-px bg-fuchsia-600/50 absolute left-0 top-1/2 -translate-y-1/2"></div>
+                    <div ref={textRef} className="relative bg-black px-4 flex gap-4 items-center">
+                        <span className="font-mono text-[10px] md:text-xs tracking-[0.3em] text-fuchsia-500 uppercase">
+                            Loading Festival
+                        </span>
+                        <span className="font-mono text-lg md:text-xl font-bold text-fuchsia-500">
+                            {progress}%
+                        </span>
                     </div>
                 </div>
+
+                {/* 2026 */}
+                <h1 className="text-[15vw] md:text-[18vw] font-black tracking-tighter opacity-100 -mt-[2vw]"
+                    style={{
+                        WebkitTextStroke: "1px #d946ef", // fuchsia-500 hex
+                        color: "transparent"
+                    }}>
+                    2026
+                </h1>
             </div>
+
         </div>
     );
 }

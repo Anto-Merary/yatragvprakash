@@ -5,6 +5,18 @@
   --font-mono: var(--font-mono);
 }
 
+@font-face {
+  font-family: 'Akira Expanded';
+  src: url('/fonts/Akira-Expanded-Demo.otf') format('opentype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+.font-akira {
+  font-family: 'Akira Expanded', sans-serif;
+}
+
 :root {
   --background: #050505;
   --foreground: #f0f0f0;

@@ -41,10 +41,13 @@ export default function Biography() {
                     <div className="md:col-span-5 relative h-[70vh] w-full tech-border bg-white/5 overflow-hidden group">
                         <div className="absolute inset-0 bg-neutral-900/50 mix-blend-multiply"></div>
 
-                        {/* Placeholder for Artist Image */}
-                        <div className="absolute inset-0 flex items-center justify-center opacity-30 group-hover:opacity-100 transition-opacity duration-700">
-                            {/* In a real scenario, an <img> would go here */}
-                            <div className="w-full h-full bg-gradient-to-br from-gray-800 to-black"></div>
+                        {/* Artist Image */}
+                        <div className="absolute inset-0 transition-opacity duration-700">
+                            <img
+                                src="/GV PRAKASH 1.webp"
+                                alt="GV Prakash"
+                                className="w-full h-full object-cover filter grayscale hover:grayscale-0 transition-all duration-700"
+                            />
                         </div>
 
                         <div className="absolute top-4 right-4 flex flex-col items-end">
