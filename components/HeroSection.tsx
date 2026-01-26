@@ -159,7 +159,7 @@ export default function HeroSection() {
                 {/* 4. ENERGY (Large Scale Typography) */}
                 <div ref={energyRef} className="absolute inset-0 flex items-center justify-center opacity-0 overflow-hidden">
                     <div className="absolute inset-0 flex flex-col justify-between py-12">
-                        <h2 className="text-[15vw] leading-none font-serif stroke-text-accent opacity-80 text-center">RHYTHM</h2>
+                        <h2 className="text-[15vw] leading-none font-serif opacity-80 text-center" style={{ WebkitTextStroke: "1px #9b1799", color: "transparent" }}>RHYTHM</h2>
                         <h2 className="text-[15vw] leading-none font-serif text-white text-center">ENERGY</h2>
                     </div>
                     <div className="relative z-10 bg-accent text-black px-6 py-2 font-mono font-bold text-2xl uppercase transform -rotate-2">
