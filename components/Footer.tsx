@@ -49,20 +49,20 @@ export default function Footer() {
                         {/* Contact Cards */}
                         <div className="space-y-4 mb-8">
                             <div className="border-2 border-white/30 p-3 hover:border-[#d946ef] transition-colors">
-                                <span className="font-black text-white uppercase text-sm">Derry Gabriel</span>
-                                <span className="text-[10px] text-[#d946ef] block uppercase tracking-widest">Overall Coordinator</span>
+                                <span className="font-black text-white uppercase text-sm">Overall Coordinator</span>
+                                <span className="text-[15px] text-[#d946ef] block uppercase tracking-widest">Derry Gabriel</span>
                                 <a href="tel:+919884470171" className="text-gray-400 text-sm hover:text-white transition-colors font-mono">+91 98844 70171</a>
                             </div>
 
                             <div className="border-2 border-white/30 p-3 hover:border-[#d946ef] transition-colors">
-                                <span className="font-black text-white uppercase text-sm">Kishore Kumar S</span>
-                                <span className="text-[10px] text-[#d946ef] block uppercase tracking-widest">Event Committee Coordinator</span>
+                                <span className="font-black text-white uppercase text-sm">Event Committee Coordinator</span>
+                                <span className="text-[15px] text-[#d946ef] block uppercase tracking-widest">Kishore Kumar S</span>
                                 <a href="tel:+918825910614" className="text-gray-400 text-sm hover:text-white transition-colors font-mono">+91 88259 10614</a>
                             </div>
 
                             <div className="border-2 border-white/30 p-3 hover:border-[#d946ef] transition-colors">
-                                <span className="font-black text-white uppercase text-sm">Muthu Kumaran</span>
-                                <span className="text-[10px] text-[#d946ef] block uppercase tracking-widest">Joint Overall Coordinator</span>
+                                <span className="font-black text-white uppercase text-sm">Joint Overall Coordinator</span>
+                                <span className="text-[15px] text-[#d946ef] block uppercase tracking-widest">Muthu Kumaran</span>
                                 <a href="tel:+919094141232" className="text-gray-400 text-sm hover:text-white transition-colors font-mono">+91 90941 41232</a>
                             </div>
                         </div>

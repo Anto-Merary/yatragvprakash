@@ -38,7 +38,7 @@ export default function Biography() {
                 <div className="grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
 
                     {/* Left Column: Image / Graphic (5 cols) */}
-                    <div className="md:col-span-5 relative h-[70vh] w-full tech-border bg-white/5 overflow-hidden group">
+                    <div className="md:col-span-5 relative min-h-[50vh] md:h-[70vh] w-full tech-border bg-white/5 overflow-hidden group aspect-[3/4] md:aspect-auto">
                         <div className="absolute inset-0 bg-neutral-900/50 mix-blend-multiply"></div>
 
                         {/* Artist Image */}

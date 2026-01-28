@@ -110,12 +110,12 @@ export default function HeroSection() {
 
                 {/* 1. HERO */}
                 <div ref={heroRef} className="absolute inset-0 flex flex-col items-center justify-center p-6">
-                    <div className="tech-border p-8 bg-black/40 backdrop-blur-sm">
-                        <div className="font-mono text-accent text-xs tracking-[0.5em] mb-4 text-center">[ SYSTEM_BOOT_SEQUENCE ]</div>
-                        <h1 className="text-7xl md:text-[9rem] font-serif leading-[0.85] tracking-tighter text-center uppercase mix-blend-difference">
+                    <div className="tech-border p-8 bg-black/40 backdrop-blur-sm max-w-full">
+                        <div className="font-mono text-accent text-xs md:text-sm tracking-[0.5em] mb-4 text-center">[ SYSTEM_BOOT_SEQUENCE ]</div>
+                        <h1 className="text-[12vw] md:text-[9rem] font-serif leading-[0.85] tracking-tighter text-center uppercase mix-blend-difference break-words">
                             GV<br />Prakash
                         </h1>
-                        <div className="mt-8 flex justify-between w-full text-xs font-mono text-gray-400">
+                        <div className="mt-8 flex justify-between w-full text-[10px] md:text-xs font-mono text-gray-400">
                             <span>/// AUDIO_CORE_ACTIVE</span>
                             <span>VOL_100</span>
                         </div>
@@ -123,34 +123,34 @@ export default function HeroSection() {
                 </div>
 
                 {/* 2. MANIFESTO (Brutalist Blocks) */}
-                <div ref={manifestoRef} className="absolute inset-0 flex items-center justify-center p-12 opacity-0">
+                <div ref={manifestoRef} className="absolute inset-0 flex items-center justify-center p-6 md:p-12 opacity-0">
                     <div className="max-w-4xl w-full relative">
-                        <div className="absolute -top-20 -left-20 text-[12rem] font-serif text-white/5 pointer-events-none">01</div>
-                        <h2 className="text-4xl md:text-6xl font-serif uppercase leading-tight mb-8 relative z-10">
+                        <div className="absolute -top-10 -left-10 md:-top-20 md:-left-20 text-[20vw] md:text-[12rem] font-serif text-white/5 pointer-events-none">01</div>
+                        <h2 className="text-4xl md:text-6xl font-serif uppercase leading-tight mb-8 relative z-10 break-words">
                             The <span className="text-accent italic">Alchemy</span> of<br />Pure Emotion
                         </h2>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 border-t border-white/20 pt-8">
-                            <p className="font-mono text-sm leading-relaxed text-gray-300">
+                            <p className="font-mono text-xs md:text-sm leading-relaxed text-gray-300">
                                 &gt; INITIALIZING NARRATIVE PROTOCOL<br />
                                 &gt; FROM VEYIL TO SOORARAI POTTRU<br />
                                 &gt; A LEGACY OF SOULFUL STRINGS
                             </p>
                             <div className="bg-white/10 p-4 border-l-2 border-accent">
-                                <GlitchText text="MUSIC IS THE WEAPON" intensity="high" className="font-bold text-xl" />
+                                <GlitchText text="MUSIC IS THE WEAPON" intensity="high" className="font-bold text-lg md:text-xl" />
                             </div>
                         </div>
                     </div>
                 </div>
 
                 {/* 3. SOUND (Technical HUD) */}
-                <div ref={soundRef} className="absolute inset-0 flex items-center justify-end p-12 md:pr-24 opacity-0">
-                    <div className="text-right">
-                        <div className="font-mono text-accent mb-2">/// FREQUENCY_MODULATION</div>
-                        <h2 className="text-6xl md:text-8xl font-serif uppercase stroke-text">Sonic</h2>
-                        <h2 className="text-6xl md:text-8xl font-serif uppercase text-white -mt-4">Maestro</h2>
+                <div ref={soundRef} className="absolute inset-0 flex items-center justify-end p-6 md:p-12 md:pr-24 opacity-0">
+                    <div className="text-right w-full md:w-auto">
+                        <div className="font-mono text-accent mb-2 text-xs md:text-base">/// FREQUENCY_MODULATION</div>
+                        <h2 className="text-[12vw] md:text-8xl font-serif uppercase stroke-text leading-none">Sonic</h2>
+                        <h2 className="text-[12vw] md:text-8xl font-serif uppercase text-white leading-none -mt-2 md:-mt-4">Maestro</h2>
                         <div className="mt-6 flex justify-end gap-2">
                             {[1, 2, 3, 4, 5].map(i => (
-                                <div key={i} className="w-2 h-16 bg-white/20 animate-pulse" style={{ animationDelay: `${i * 0.1}s` }}></div>
+                                <div key={i} className="w-2 h-10 md:h-16 bg-white/20 animate-pulse" style={{ animationDelay: `${i * 0.1}s` }}></div>
                             ))}
                         </div>
                     </div>
@@ -158,11 +158,11 @@ export default function HeroSection() {
 
                 {/* 4. ENERGY (Large Scale Typography) */}
                 <div ref={energyRef} className="absolute inset-0 flex items-center justify-center opacity-0 overflow-hidden">
-                    <div className="absolute inset-0 flex flex-col justify-between py-12">
-                        <h2 className="text-[15vw] leading-none font-serif opacity-80 text-center" style={{ WebkitTextStroke: "1px #9b1799", color: "transparent" }}>RHYTHM</h2>
-                        <h2 className="text-[15vw] leading-none font-serif text-white text-center">ENERGY</h2>
+                    <div className="absolute inset-0 flex flex-col justify-center items-center py-12 gap-4">
+                        <h2 className="text-[18vw] leading-none font-serif opacity-80 text-center" style={{ WebkitTextStroke: "1px #9b1799", color: "transparent" }}>RHYTHM</h2>
+                        <h2 className="text-[18vw] leading-none font-serif text-white text-center">ENERGY</h2>
                     </div>
-                    <div className="relative z-10 bg-accent text-black px-6 py-2 font-mono font-bold text-2xl uppercase transform -rotate-2">
+                    <div className="relative z-10 bg-accent text-black px-6 py-2 font-mono font-bold text-lg md:text-2xl uppercase transform -rotate-2">
                         Heart & Soul
                     </div>
                 </div>
