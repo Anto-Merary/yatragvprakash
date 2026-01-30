@@ -9,6 +9,7 @@ import HeroSection from "@/components/HeroSection";
 
 import Biography from "@/components/Biography";
 import Footer from "@/components/Footer";
+import CinematicBars from "@/components/CinematicBars";
 
 export default function Home() {
   const [loading, setLoading] = useState(true);
@@ -19,14 +20,7 @@ export default function Home() {
 
       <Navbar />
 
-      <div className="letterbox-bar letterbox-top flex items-center justify-between px-8 text-[10px] text-gray-500 font-mono uppercase tracking-widest z-50 pointer-events-none">
-        <span>SYS.SEQ // 001</span>
-        <span>REC_MODE</span>
-      </div>
-      <div className="letterbox-bar letterbox-bottom flex items-center justify-between px-8 text-[10px] text-gray-500 font-mono uppercase tracking-widest z-50 pointer-events-none">
-        <span>COORD: 13.0827° N, 80.2707° E</span>
-        <span>MEMORY: OPTIMAL</span>
-      </div>
+      <CinematicBars />
 
       <div className="grid-overlay"></div>
       <Scanline />

@@ -44,7 +44,7 @@ export default function Biography() {
                         {/* Artist Image */}
                         <div className="absolute inset-0 transition-opacity duration-700">
                             <img
-                                src="/GV PRAKASH 1.webp"
+                                src="/gv-prakash/GV PRAKASH 1.webp"
                                 alt="GV Prakash"
                                 className="w-full h-full object-cover filter grayscale hover:grayscale-0 transition-all duration-700"
                             />

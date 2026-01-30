@@ -26,7 +26,7 @@ export default function HeroSection() {
         const ctx = gsap.context(() => {
             // Main Timeline
             // Compressed for punchier, brutalist feel
-            const totalScrollHeight = 4000;
+            const totalScrollHeight = 6000;
 
             const tl = gsap.timeline({
                 scrollTrigger: {
@@ -92,7 +92,7 @@ export default function HeroSection() {
             <div className="absolute inset-0 z-0 opacity-60 mix-blend-screen">
                 <ImageSequence
                     ref={sequenceRef}
-                    frameCount={48}
+                    frameCount={144}
                     folderPath="/frames"
                     fileNamePrefix="ezgif-frame-"
                     fileNameSuffix=".jpg"

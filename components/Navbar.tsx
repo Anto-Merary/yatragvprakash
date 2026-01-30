@@ -29,7 +29,7 @@ export default function Navbar() {
         >
             {/* Centered Logo */}
             <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none">
-                <img src="/logo.png" alt="Sana Logo" className="h-12 w-auto object-contain opacity-80" />
+                <img src="/gv-prakash/logo.png" alt="Sana Logo" className="h-12 w-auto object-contain opacity-80" />
             </div>
 
 

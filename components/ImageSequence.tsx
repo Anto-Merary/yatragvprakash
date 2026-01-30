@@ -95,13 +95,16 @@ const ImageSequence = forwardRef<ImageSequenceHandle, ImageSequenceProps>(
                     );
                 };
 
-                // Clear and render
+                // Clear and render with smooth frame blending
                 context.clearRect(0, 0, canvas.width, canvas.height);
 
-                // Draw base frame only - NO INTERPOLATION/BLENDING
+                // Draw frames with smooth blending for ultra-smooth scrolling
                 drawImageCover(img1, 1.0);
+                if (blendFactor > 0 && img2 && img2 !== img1) {
+                    drawImageCover(img2, blendFactor);
+                }
 
-                // Reset alpha just in case
+                // Reset alpha
                 context.globalAlpha = 1.0;
             },
         }));
